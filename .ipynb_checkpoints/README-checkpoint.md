@@ -16,3 +16,11 @@ This project was completed by Karan Dogra, Thotadamoole Shreenidhi, Anthony Abus
 
 Data Source: [Yahoo Finance](https://finance.yahoo.com/) 
 
+## Objective
+- Forecast stock prices for our 10 specified companies using historical data and market indicators
+- Provide into potential future trends based on predictive modeling techniques
+
+## Data Loading 
+- Insert text here
+
+## Benefits 
