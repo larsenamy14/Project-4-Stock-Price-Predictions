@@ -22,7 +22,7 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 - Forecast stock prices for our 10 specified companies using historical data and market indicators
 - Provide into potential future trends based on predictive modeling techniques
 
-## Data Model Implementation (25 points)
+## Data Model Implementation 
 - A Python script initializes, trains, and evaluates a model 
 - The data is cleaned, normalized, and standardized prior to modeling
 - The model utilizes data retrieved from SQL or Spark 
