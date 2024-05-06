@@ -33,4 +33,7 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 - Overall model performance is printed or displayed at the end of the script
 
 ## Benefits
-- 
+- This analysis dashboard provides you with immediate, actionable insights, empowering informed decision-making to propel performance enhancement initiatives forward 
+
+## Conclusion 
+- Insert conclusion here 
