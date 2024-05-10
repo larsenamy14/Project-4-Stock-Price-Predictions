@@ -31,8 +31,23 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
     - Amazon `AMZN`
         - ![alt text](<AMZN 10 Models.png>)
     - Apple `AAPL`
-        - 
-
+        - ![alt text](<AAPL 10 Models.png>)
+    - General Motors `GM`
+        - ![alt text](<GM 10 Models.png>)
+    - Google `GOOG`
+        - ![alt text](<GOOG 10 Models.png>)
+    - Honda `HMC`
+        - ![alt text](<HMC 10 Models.png>)
+    - Meta `META`
+        - ![alt text](<META 10 Models.png>)
+    - Microsoft `MSFT`
+        - ![alt text](<MSFT 10 Models.png>)
+    - Tesla `TSLA`
+        - ![alt text](<TSLA 10 Models.png>)
+    - Toyota `TM`
+        - ![alt text](<TM 10 Models.png>)
+    - Volkswagen `VWAGY`
+        - ![alt text](<VWAGY 10 Models.png>)
 
 ## Data Model Optimization
 - The model optimization and evaluation process showing iterative changes made to the model and the resulting changes in model performance is documented in either a CSV/Excel table or in the Python script itself
