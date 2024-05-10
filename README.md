@@ -36,40 +36,42 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
     - The index of the DataFrame data is converted to a datetime index.
 - Defined the features and target variable for modeling. The features `X` are obtained by dropping the "Close" column from the concatenated_df DataFrame.The target variable `y` is assigned the values from the "Close" column of the concatenated_df DataFrame.
 - Defined a date cutoff of `2022-04-30` to split the data into training and testing sets: Data before or on April 30, 2022, is assigned to the training set (`X_train` and `y_train`). Data after April 30, 2022, is assigned to the testing set (X_test and y_test).
-- Performed `k-fold cross-validation` to evaluate the performance of a neural network model:
-    - The number of folds is set to 10.
-    - Two lists are initialized to store the R-squared scores for training and testing data.
-    - A KFold object is created with 10 splits and shuffling enabled.
-    - The model architecture is defined using TensorFlow's Sequential API, consisting of two hidden layers with dropout regularization.
-    - The model is compiled using the Adam optimizer and mean squared error loss function.
-    - Training is performed with a smaller learning rate over 50 epochs.
-    - For each fold in the k-fold cross-validation loop:
-        - The training and testing data are split based on the current fold indices.
-        - The model is trained on the training data and evaluated on both training and testing data.
-        - R-squared scores for both training and testing data are calculated and appended to their respective lists.
-    - Finally, the average R-squared scores for training and testing data are calculated and printed.
+## K-Fold Cross-Validation to Evaluate the Performance of a Neural Network Model
+- The number of folds is set to 10.
+- Two lists are initialized to store the R-squared scores for training and testing data.
+- A KFold object is created with 10 splits and shuffling enabled.
+- The model architecture is defined using TensorFlow's Sequential API, consisting of two hidden layers with dropout regularization.
+- The model is compiled using the Adam optimizer and mean squared error loss function.
+- Training is performed with a smaller learning rate over 50 epochs.
+- For each fold in the k-fold cross-validation loop:
+    - The training and testing data are split based on the current fold indices.
+    - The model is trained on the training data and evaluated on both training and testing data.
+    - R-squared scores for both training and testing data are calculated and appended to their respective lists.
+- Finally, the average R-squared scores for training and testing data are calculated and printed.
 - This aims to assess the model's performance using cross-validation, which provides a more reliable estimate of its generalization ability compared to a single train-test split.
-- The model demonstrates meaningful predictive power at least 75% classification accuracy or 0.80 R-squared 
-    - Amazon `AMZN`
-        - ![alt text](<AMZN 10 Models.png>)
-    - Apple `AAPL`
-        - ![alt text](<AAPL 10 Models.png>)
-    - General Motors `GM`
-        - ![alt text](<GM 10 Models.png>)
-    - Google `GOOG`
-        - ![alt text](<GOOG 10 Models.png>)
-    - Honda `HMC`
-        - ![alt text](<HMC 10 Models.png>)
-    - Meta `META`
-        - ![alt text](<META 10 Models.png>)
-    - Microsoft `MSFT`
-        - ![alt text](<MSFT 10 Models.png>)
-    - Tesla `TSLA`
-        - ![alt text](<TSLA 10 Models.png>)
-    - Toyota `TM`
-        - ![alt text](<TM 10 Models.png>)
-    - Volkswagen `VWAGY`
-        - ![alt text](<VWAGY 10 Models.png>)
+
+## Predictive Power 
+Our model meets the requirement of a predictive power of at least 75% classification or 0.80 R-squared. Results per company can be seen below: 
+- Amazon `AMZN`
+    - ![alt text](<AMZN 10 Models.png>)
+- Apple `AAPL`
+    - ![alt text](<AAPL 10 Models.png>)
+- General Motors `GM`
+    - ![alt text](<GM 10 Models.png>)
+- Google `GOOG`
+    - ![alt text](<GOOG 10 Models.png>)
+- Honda `HMC`
+    - ![alt text](<HMC 10 Models.png>)
+- Meta `META`
+    - ![alt text](<META 10 Models.png>)
+- Microsoft `MSFT`
+    - ![alt text](<MSFT 10 Models.png>)
+- Tesla `TSLA`
+    - ![alt text](<TSLA 10 Models.png>)
+- Toyota `TM`
+    - ![alt text](<TM 10 Models.png>)
+- Volkswagen `VWAGY`
+    - ![alt text](<VWAGY 10 Models.png>)
 
 ## Data Model Optimization
 - We initialized lists to store evaluation metrics for multiple models trained using k-fold cross-validation:
