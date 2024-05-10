@@ -26,7 +26,7 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 - We preprocessed our data, computed technical indicators, constructed a neural network model using `TensorFlow's Sequential API`, trained the model with early stopping, evaluated its performance using metrics like mean squared error and R-squared score, and potentially using `KFold cross-validation` for more reliable performance estimates. Additionally, there's provision for replicating the trained model.
 - Loaded our financial data from four CSV files, and read our data into pandas DataFrames
 - We converted the index of the `fedfunds_df` to a datetime index using the `pd.to_datetime()` function. Afterwards, it resampled the DataFrame to have a daily frequency and filled the missing values forward to create a new DataFrame named `fedfunds_df_monthly`
-- Concatenated several DataFrames into one, named `concatenated+df`. It combined data from our company DataFrame with the `Fear_index` column from the `fear_index_df` DataFrame and the `SPY_index` column from the `spy_index_df` DataFrame. 
+- Concatenated several DataFrames into one, named `concatenated_df`. It combined data from our company DataFrame with the `Fear_index` column from the `fear_index_df` DataFrame and the `SPY_index` column from the `spy_index_df` DataFrame. 
     - After concatenation, the index of the `concatenated_df` was converted to a datetime index
 - Calculated various technical indicators using the `finta` library and updated the DataFrame data:
     - A `20-period Simple Moving Average (SMA)` is calculated and assigned to a new column named 'MA'.
@@ -73,15 +73,15 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 
 ## Data Model Optimization
 - We initialized lists to store evaluation metrics for multiple models trained using k-fold cross-validation:
-    - For each fold in the k-fold cross-validation loop:
-        - A new neural network model is defined with two hidden layers and dropout regularization.
+    - For each fold in the `k-fold cross-validation` loop:
+        - A new `neural network model` is defined with two hidden layers and dropout regularization.
         - The model is compiled with the Adam optimizer and mean squared error loss.
         - The model is trained on the training data for 50 epochs.
-        - The model's performance is evaluated on both training and testing data, and metrics including R-squared, mean absolute error (MAE), and mean squared error (MSE) are calculated.
+        - The model's performance is evaluated on both training and testing data, and metrics including `R-squared`, mean absolute error `MAE`, and mean squared error `MSE` are calculated.
         - The evaluation metrics for each model are appended to their respective lists.
     - After the cross-validation loop, the script prints the evaluation metrics for each selected model, including the train and test R-squared scores, MAE, and MSE.
 - This approach allows for the comparison of multiple models trained and evaluated using k-fold cross-validation, providing insights into their performance and generalization ability.
-- We scaled the entire dataset using StandardScaler from scikit-learn. Then, it defines a neural network model architecture with two hidden layers, each followed by dropout regularization. The model is compiled with the Adam optimizer and mean squared error loss function.
+- We scaled the entire dataset using `StandardScaler` from `scikit-learn`. Then, it defines a neural network model architecture with two hidden layers, each followed by dropout regularization. The model is compiled with the Adam optimizer and mean squared error loss function.
 - Subsequently, the model is trained on the entire dataset for 50 epochs with a batch size of 32. Predictions are made sequentially on each data point, and the actual and predicted values are stored in a DataFrame named predictions_df.
 - Finally, the index uniqueness in both the original dataset and predictions_df is ensured, and the DataFrame is displayed. This provides a comparison between the actual and predicted values of the target variable for each data point in the dataset.
 
@@ -92,9 +92,9 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 - This analysis dashboard provides you with immediate, actionable insights, empowering informed decision-making to propel performance enhancement initiatives forward 
 
 ## Conclusion 
-*   **Comprehensive Analysis**: Leveraging historical financial data and market indicators, we conducted a thorough analysis encompassing ten prominent technology and automotive companies.
-*   **Advanced Modeling Techniques**: By employing TensorFlow's Sequential API and k-fold cross-validation, we developed and optimized neural network models to forecast stock prices with high accuracy.
-*   **Meaningful Predictive Power**: Our models exhibit substantial predictive capabilities, achieving at least 75% classification accuracy or an R-squared score of 0.80 across various companies.
-*   **Data Model Optimization**: Through iterative refinement and evaluation of multiple models, we ensured robust performance and generalization ability, considering metrics such as R-squared, MAE, and MSE.
-*   **Scalability and Deployment**: We scaled the dataset for model training and seamlessly deployed the trained models for real-time predictions, facilitating agile decision-making.
-*   **Actionable Insights**: This analysis dashboard delivers actionable insights promptly, empowering stakeholders with the necessary information to drive performance enhancement initiatives forward.
+- **Comprehensive Analysis**: Leveraging historical financial data and market indicators, we conducted a thorough analysis encompassing ten prominent technology and automotive companies.
+- **Advanced Modeling Techniques**: By employing TensorFlow's Sequential API and k-fold cross-validation, we developed and optimized neural network models to forecast stock prices with high accuracy.
+- **Meaningful Predictive Power**: Our models exhibit substantial predictive capabilities, achieving at least 75% classification accuracy or an R-squared score of 0.80 across various companies.
+- **Data Model Optimization**: Through iterative refinement and evaluation of multiple models, we ensured robust performance and generalization ability, considering metrics such as R-squared, MAE, and MSE.
+- **Scalability and Deployment**: We scaled the dataset for model training and seamlessly deployed the trained models for real-time predictions, facilitating agile decision-making.
+- **Actionable Insights**: This analysis dashboard delivers actionable insights promptly, empowering stakeholders with the necessary information to drive performance enhancement initiatives forward.
