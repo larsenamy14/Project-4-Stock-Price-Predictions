@@ -28,15 +28,27 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 - We converted the index of the `fedfunds_df` to a datetime index using the `pd.to_datetime()` function. Afterwards, it resampled the DataFrame to have a daily frequency and filled the missing values forward to create a new DataFrame named `fedfunds_df_monthly`
 - Concatenated several DataFrames into one, named `concatenated+df`. It combined data from our company DataFrame with the `Fear_index` column from the `fear_index_df` DataFrame and the `SPY_index` column from the `spy_index_df` DataFrame. 
     - After concatenation, the index of the `concatenated_df` was converted to a datetime index
-- We shifted the target variable (`close` column), in the `concatenated_df` DataFrame by 5 periods into the future. 
-    - This is commonly done in time series forecasting tasks to align predictor variables with their corresponding future outcomes. After shifting, rows with missing values were dropped from the DataFrame
 - Calculated various technical indicators using the `finta` library and updated the DataFrame data:
     - A `20-period Simple Moving Average (SMA)` is calculated and assigned to a new column named 'MA'.
     - A `14-period Relative Strength Index (RSI)` is computed and assigned to a new column named 'RSI'.
     - Bollinger Bands are calculated correctly using the `BBANDS` function from `finta` with parameters for the period (20) and standard deviation multiplier (2).
     - The upper, middle, and lower bands of the Bollinger Bands are assigned to new columns named `BB_UPPER`, `BB_MIDDLE`, and `BB_LOWER`, respectively.
     - The index of the DataFrame data is converted to a datetime index.
-
+- Defined the features and target variable for modeling. The features `X` are obtained by dropping the "Close" column from the concatenated_df DataFrame.The target variable `y` is assigned the values from the "Close" column of the concatenated_df DataFrame.
+- Defined a date cutoff of `2022-04-30` to split the data into training and testing sets: Data before or on April 30, 2022, is assigned to the training set (`X_train` and `y_train`). Data after April 30, 2022, is assigned to the testing set (X_test and y_test).
+- Performed `k-fold cross-validation` to evaluate the performance of a neural network model:
+    - The number of folds is set to 10.
+    - Two lists are initialized to store the R-squared scores for training and testing data.
+    - A KFold object is created with 10 splits and shuffling enabled.
+    - The model architecture is defined using TensorFlow's Sequential API, consisting of two hidden layers with dropout regularization.
+    - The model is compiled using the Adam optimizer and mean squared error loss function.
+    - Training is performed with a smaller learning rate over 50 epochs.
+    - For each fold in the k-fold cross-validation loop:
+        - The training and testing data are split based on the current fold indices.
+        - The model is trained on the training data and evaluated on both training and testing data.
+        - R-squared scores for both training and testing data are calculated and appended to their respective lists.
+    - Finally, the average R-squared scores for training and testing data are calculated and printed.
+- This aims to assess the model's performance using cross-validation, which provides a more reliable estimate of its generalization ability compared to a single train-test split.
 - The model demonstrates meaningful predictive power at least 75% classification accuracy or 0.80 R-squared 
     - Amazon `AMZN`
         - ![alt text](<AMZN 10 Models.png>)
@@ -73,9 +85,16 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 - Subsequently, the model is trained on the entire dataset for 50 epochs with a batch size of 32. Predictions are made sequentially on each data point, and the actual and predicted values are stored in a DataFrame named predictions_df.
 - Finally, the index uniqueness in both the original dataset and predictions_df is ensured, and the DataFrame is displayed. This provides a comparison between the actual and predicted values of the target variable for each data point in the dataset.
 
+## Database 
+- (ASK SHREENIDI AND AMY FOR MORE DETAILS)
 
 ## Benefits
 - This analysis dashboard provides you with immediate, actionable insights, empowering informed decision-making to propel performance enhancement initiatives forward 
 
 ## Conclusion 
-- Insert conclusion here 
+*   **Comprehensive Analysis**: Leveraging historical financial data and market indicators, we conducted a thorough analysis encompassing ten prominent technology and automotive companies.
+*   **Advanced Modeling Techniques**: By employing TensorFlow's Sequential API and k-fold cross-validation, we developed and optimized neural network models to forecast stock prices with high accuracy.
+*   **Meaningful Predictive Power**: Our models exhibit substantial predictive capabilities, achieving at least 75% classification accuracy or an R-squared score of 0.80 across various companies.
+*   **Data Model Optimization**: Through iterative refinement and evaluation of multiple models, we ensured robust performance and generalization ability, considering metrics such as R-squared, MAE, and MSE.
+*   **Scalability and Deployment**: We scaled the dataset for model training and seamlessly deployed the trained models for real-time predictions, facilitating agile decision-making.
+*   **Actionable Insights**: This analysis dashboard delivers actionable insights promptly, empowering stakeholders with the necessary information to drive performance enhancement initiatives forward.
