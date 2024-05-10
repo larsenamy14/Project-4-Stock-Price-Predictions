@@ -23,10 +23,16 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 - Provide into potential future trends based on predictive modeling techniques
 
 ## Data Model Implementation 
-- A Python script initializes, trains, and evaluates a model 
+- Upon loading our data, we performed data cleaning by converting data types, dropping NaN values, and concatenating dataframes. 
+- We calculated technical indicators using finta, and correctly calculated Bollinger Bands. 
+
 - The data is cleaned, normalized, and standardized prior to modeling
-- The model utilizes data retrieved from SQL or Spark 
 - The model demonstrates meaningful predictive power at least 75% classification accuracy or 0.80 R-squared 
+    - Amazon `AMZN`
+        - ![alt text](<AMZN 10 Models.png>)
+    - Apple `AAPL`
+        - 
+
 
 ## Data Model Optimization
 - The model optimization and evaluation process showing iterative changes made to the model and the resulting changes in model performance is documented in either a CSV/Excel table or in the Python script itself
