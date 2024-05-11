@@ -94,7 +94,7 @@ Our model meets the requirement of a predictive power of at least 75% classifica
     - ![alt text](<data loading from CSV.png>)
 - **Data Integrity Maintenance**: A mechanism to reset the database was implemented by dropping existing tables before creating new ones, ensuring data integrity and consistency during re-imports.
 - **Table Validation**: Each table's structure and data were validated by selecting all records from each table to confirm the successful creation and import of data.
-    - - ![alt text](<apple table creation and data fetching.png>)
+    - ![alt text](<apple table creation and data fetching.png>)
 - **Primary Key Enforcement**: Date was designated as the primary key for each table, ensuring uniqueness and efficient data retrieval.
 - **Database Readiness**: With the completion of table creation and data import, the database is now primed for further analysis and querying.
 
