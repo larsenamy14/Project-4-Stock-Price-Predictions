@@ -88,7 +88,15 @@ Our model meets the requirement of a predictive power of at least 75% classifica
 - Finally, the index uniqueness in both the original dataset and predictions_df is ensured, and the DataFrame is displayed. This provides a comparison between the actual and predicted values of the target variable for each data point in the dataset.
 
 ## Database 
-- (ASK SHREENIDI AND AMY FOR MORE DETAILS)
+- **Database Setup**: Tables were created for each company's stock data, including fields for date, volume, Fear Index, SPY Index, FEDFUNDS, Target, MA, RSI, and Bollinger Bands (BB_UPPER, BB_MIDDLE, BB_LOWER).
+    - ![alt text](<dta loading process for all tables.png>)
+- **Data Import and Verification**: After table creation, data import was performed, and the correctness of the import was verified by querying the tables.
+    - ![alt text](<data loading from CSV.png>)
+- **Data Integrity Maintenance**: A mechanism to reset the database was implemented by dropping existing tables before creating new ones, ensuring data integrity and consistency during re-imports.
+- **Table Validation**: Each table's structure and data were validated by selecting all records from each table to confirm the successful creation and import of data.
+    - - ![alt text](<apple table creation and data fetching.png>)
+- **Primary Key Enforcement**: Date was designated as the primary key for each table, ensuring uniqueness and efficient data retrieval.
+- **Database Readiness**: With the completion of table creation and data import, the database is now primed for further analysis and querying.
 
 ## Benefits
 - This analysis dashboard provides you with immediate, actionable insights, empowering informed decision-making to propel performance enhancement initiatives forward 
