@@ -98,6 +98,12 @@ Our model meets the requirement of a predictive power of at least 75% classifica
 - **Primary Key Enforcement**: Date was designated as the primary key for each table, ensuring uniqueness and efficient data retrieval.
 - **Database Readiness**: With the completion of table creation and data import, the database is now primed for further analysis and querying.
 
+## Visualizations (Tableau)
+- **Average Absolute Difference** 
+    - ![alt text](tableau/tableau_dashboard_1.png)
+- **Average % Difference Between Predicted & Actual Stock**
+    - ![alt text](tableau/tableau_dashboard_2.png)
+
 ## Benefits
 - **Streamlined Decision-Making**: With comprehensive data analysis and predictive modeling, stakeholders can make well-informed decisions swiftly, capitalizing on emerging market trends and opportunities.
 - **Enhanced Risk Management**: By leveraging advanced modeling techniques and evaluating performance metrics, our analysis aids in identifying and mitigating potential risks associated with investment strategies.
