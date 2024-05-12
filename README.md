@@ -53,25 +53,25 @@ Data Source: [Yahoo Finance](https://finance.yahoo.com/)
 ## Predictive Power 
 Our model meets the requirement of a predictive power of at least 75% classification or 0.80 R-squared. Results per company can be seen below: 
 - Amazon `AMZN`
-    - ![alt text](<AMZN 10 Models.png>)
+    - ![alt text](<./model_results/AMZN 10 Models.png>)
 - Apple `AAPL`
-    - ![alt text](<AAPL 10 Models.png>)
+    - ![alt text](<./model_results/AAPL 10 Models.png>)
 - General Motors `GM`
-    - ![alt text](<GM 10 Models.png>)
+    - ![alt text](<./model_results/GM 10 Models.png>)
 - Google `GOOG`
-    - ![alt text](<GOOG 10 Models.png>)
+    - ![alt text](<./model_results/GOOG 10 Models.png>)
 - Honda `HMC`
-    - ![alt text](<HMC 10 Models.png>)
+    - ![alt text](<./model_results/HMC 10 Models.png>)
 - Meta `META`
-    - ![alt text](<META 10 Models.png>)
+    - ![alt text](<./model_results/META 10 Models.png>)
 - Microsoft `MSFT`
-    - ![alt text](<MSFT 10 Models.png>)
+    - ![alt text](<./model_results/MSFT 10 Models.png>)
 - Tesla `TSLA`
-    - ![alt text](<TSLA 10 Models.png>)
+    - ![alt text](<./model_results/TSLA 10 Models.png>)
 - Toyota `TM`
-    - ![alt text](<TM 10 Models.png>)
+    - ![alt text](<./model_results/TM 10 Models.png>)
 - Volkswagen `VWAGY`
-    - ![alt text](<VWAGY 10 Models.png>)
+    - ![alt text](<./model_results/VWAGY 10 Models.png>)
 
 ## Data Model Optimization
 - We initialized lists to store evaluation metrics for multiple models trained using k-fold cross-validation:
@@ -89,12 +89,12 @@ Our model meets the requirement of a predictive power of at least 75% classifica
 
 ## Database 
 - **Database Setup**: Tables were created for each company's stock data, including fields for date, volume, Fear Index, SPY Index, FEDFUNDS, Target, MA, RSI, and Bollinger Bands (BB_UPPER, BB_MIDDLE, BB_LOWER).
-    - ![alt text](<dta loading process for all tables.png>)
+    - ![alt text](<./database_images/dta loading process for all tables.png>)
 - **Data Import and Verification**: After table creation, data import was performed, and the correctness of the import was verified by querying the tables.
-    - ![alt text](<data loading from CSV.png>)
+    - ![alt text](<./database_images/data loading from CSV.png>)
 - **Data Integrity Maintenance**: A mechanism to reset the database was implemented by dropping existing tables before creating new ones, ensuring data integrity and consistency during re-imports.
 - **Table Validation**: Each table's structure and data were validated by selecting all records from each table to confirm the successful creation and import of data.
-    - ![alt text](<apple table creation and data fetching.png>)
+    - ![alt text](<./database_images/apple table creation and data fetching.png>)
 - **Primary Key Enforcement**: Date was designated as the primary key for each table, ensuring uniqueness and efficient data retrieval.
 - **Database Readiness**: With the completion of table creation and data import, the database is now primed for further analysis and querying.
 
